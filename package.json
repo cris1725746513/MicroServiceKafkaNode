@@ -1,0 +1,41 @@
+{
+  "name": "back_fm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "SET NODE_ENV=dev && node server.js",
+    "test": "mocha --reporter spec"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "chai": "^4.3.6",
+    "connect-timeout": "^1.9.0",
+    "cors": "^2.8.5",
+    "date-and-time": "^2.3.1",
+    "dse-driver": "^2.3.1",
+    "express": "^4.18.1",
+    "express-force-ssl": "^0.3.2",
+    "https": "^1.0.0",
+    "ip": "^1.1.8",
+    "jwt-simple": "^0.5.6",
+    "lowdb": "^3.0.0",
+    "mocha": "^10.0.0",
+    "moment": "^2.29.3",
+    "moment-timezone": "^0.5.34",
+    "morgan": "^1.10.0",
+    "nanoid": "^3.3.4",
+    "nodemon": "^2.0.16",
+    "pg": "^8.7.3",
+    "query-string": "^7.1.1",
+    "randomstring": "^1.2.2",
+    "request": "^2.88.2",
+    "schema-object": "^4.0.11",
+    "swagger-ui-express": "^4.4.0",
+    "xml2js": "^0.4.23"
+  }
+}

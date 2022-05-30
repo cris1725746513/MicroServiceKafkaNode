@@ -1,0 +1,33 @@
+{
+  "localServer": {
+    "host": "0.0.0.0",
+    "port": 3000,
+    "validateCui": "/v1/personalDocumentManagement/cui/:cui",
+    "validateCuiImage": "/v1/personalDocumentManagement/cui/image/:cui",
+    "timeout": "12s",
+    "remoteTimeout": 12000,
+    "params": {
+      "codeArea": "502"
+    },
+    "security": {
+      "enable": true,
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoidGlnb2FwaWxhdGFtIiwicGFzc3dvcmQiOiJDb21jZWwyMDEyIiwiZGF0ZSI6IjIwMTctMDUtMDhUMTI6Mjc6NTctMDY6MDAifQ.4n5pvGCBP16CrHkFc8CFR7wl3QD4c9-SFzZUELLHeQM"
+    }
+  },
+  "timezone": {
+    "default": "America/Guatemala"
+  },
+  "remoteService": {
+    "uri": "https://pfapi.tigo.com.gt/profiling/app/profilingtools/v1/renap/cui/",
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhcGlfdGVhbSIsImlhdCI6MTU2MjM3MTM2Mywic3ViIjoiYXBpX3RlYW0iLCJpc3MiOiJQcm9maWxpbmdUb29sc0FQSSIsImFyZWEiOiJBUEkgVGVhbSIsIm5hbWUiOiJBUEkgVGVhbSIsImlkIjoiYXBpX3RlYW0ifQ.OGMheWC2wD0ddLEjelVjGUyhhXQ7aWYEpvwUfXSwfJM",
+    "timeout": 10000
+  },
+  "log": {
+    "name": "PersonalDocumentManagement-api",
+    "level": "INFO",
+    "levels": {
+      "error": "/var/log/app/errEvent_PersonalDocumentManagement.err",
+      "debug": "/var/log/app/appEvent_PersonalDocumentManagement.out"
+    }
+  }
+}
