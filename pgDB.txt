@@ -1,0 +1,85 @@
+--DATOS DE CREACION
+CREATE DATABASE "blackList"
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Ecuador.1252'
+    LC_CTYPE = 'Spanish_Ecuador.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+COMMENT ON DATABASE "blackList"
+    IS 'data base of DEV';
+
+-- Table: public.blackList_Table
+
+-- DROP TABLE IF EXISTS public."blackList_Table";
+
+CREATE TABLE IF NOT EXISTS public."blackList_Table"
+(
+    "nombreBlacklist" character varying COLLATE pg_catalog."default" NOT NULL,
+    id character varying COLLATE pg_catalog."default",
+    status boolean NOT NULL,
+    "duración" character varying COLLATE pg_catalog."default",
+    descripcion text COLLATE pg_catalog."default",
+    uid uuid NOT NULL DEFAULT uuid_generate_v4(),
+    createddate timestamp with time zone NOT NULL DEFAULT now(),
+    "updatedDate" timestamp with time zone,
+    CONSTRAINT "blackList_Table_pkey" PRIMARY KEY (uid)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."blackList_Table"
+    OWNER to postgres;
+
+CREATE OR REPLACE FUNCTION public.update_fecha()
+    RETURNS trigger
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE NOT LEAKPROOF
+AS $BODY$
+BEGIN
+    NEW."updatedDate"=NOW();
+    RETURN NEW;
+END; 
+$BODY$;
+
+ALTER FUNCTION public.update_fecha()
+    OWNER TO postgres;
+
+-- Trigger: set_timestamp
+
+-- DROP TRIGGER IF EXISTS set_timestamp ON public."blackList_Table";
+
+CREATE TRIGGER set_timestamp
+    BEFORE UPDATE 
+    ON public."blackList_Table"
+    FOR EACH ROW
+    EXECUTE FUNCTION public.update_fecha();
+
+    CREATE TABLE IF NOT EXISTS public."Registro_sincronizacion"
+(
+    dpi character varying COLLATE pg_catalog."default" NOT NULL,
+    type character varying COLLATE pg_catalog."default" NOT NULL,
+    blacklistid character varying COLLATE pg_catalog."default" NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    nit character varying COLLATE pg_catalog."default" NOT NULL,
+    reason_comment character varying COLLATE pg_catalog."default" NOT NULL,
+    reason_dpi character varying COLLATE pg_catalog."default" NOT NULL,
+    "reason_dpiPicture" character varying COLLATE pg_catalog."default" NOT NULL,
+    reason_holder character varying COLLATE pg_catalog."default" NOT NULL,
+    reason_interest character varying COLLATE pg_catalog."default" NOT NULL,
+    reason_other character varying COLLATE pg_catalog."default" NOT NULL,
+    reason_phone character varying COLLATE pg_catalog."default" NOT NULL,
+    reason_secure_info character varying COLLATE pg_catalog."default" NOT NULL,
+    "user" character varying COLLATE pg_catalog."default" NOT NULL,
+    "State" character varying COLLATE pg_catalog."default" NOT NULL,
+    "id_Registro_sincronizacion" bigint NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 9223372036854775807 CACHE 1 ),
+    CONSTRAINT "ID_RS" PRIMARY KEY ("id_Registro_sincronizacion")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."Registro_sincronizacion"
+    OWNER to postgres;

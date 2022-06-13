@@ -1,7 +1,7 @@
 {
   "localServer": {
     "host": "0.0.0.0",
-    "port": 3000,
+    "port": 8080,
     "validateCui": "/v1/personalDocumentManagement/cui/:cui",
     "validateCuiImage": "/v1/personalDocumentManagement/cui/image/:cui",
     "timeout": "12s",
@@ -29,5 +29,12 @@
       "error": "/var/log/app/errEvent_PersonalDocumentManagement.err",
       "debug": "/var/log/app/appEvent_PersonalDocumentManagement.out"
     }
+  },
+  "email":{
+    "host_smpt":"smtp.gmail.com",
+    "port_smpt":"465",
+    "user_smpt":"catmanyan31@gmail.com",
+    "pass_smpt":"ovhhtlhvyctrymqz"
   }
+  
 }

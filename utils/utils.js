@@ -1,6 +1,5 @@
 const config = require('config');
 const moment = require('moment-timezone');
-// const dse = require('cassandra-driver');
 const jwt = require('jwt-simple');
 const bunyan = require('bunyan');
 const os = require('os');

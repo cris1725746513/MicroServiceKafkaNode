@@ -1,14 +1,15 @@
 const SchemaObject = require("schema-object");
 
 const modelo = new SchemaObject({
-  nombreBlacklist: { type: String, required: true },
+  nombreblacklist: { type: String, required: true },
   id: { type: String, required: true },
   status: { type: Boolean, required: true },
-  duración: { type: String, required: true },
+  duracion: { type: String },
   descripcion: { type: String, required: true },
   uid: { type: String},
   createdDate: { type: Date},
-  updatedDate: { type: Date},
+  updatedDate: { type: Date}
 });
+
 module.exports = modelo;
 //nombreBlacklist ,id,status,duración,descripcion
