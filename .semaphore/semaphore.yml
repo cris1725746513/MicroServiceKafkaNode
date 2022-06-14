@@ -29,4 +29,4 @@ blocks:
       jobs:
         - name: test integration
           commands:
-            - docker-compose run back_fm npm test
+            - 'docker-compose run back_fm npm test '
