@@ -10,7 +10,7 @@ services:
     ports: 
       - '5432:5432'
 
-  addressbook:
+  back_fm:
     image: $DOCKER_USERNAME/dockerizing-pruebacian:latest
     command: "npm run migrate && npm run pm2"
     environment:
