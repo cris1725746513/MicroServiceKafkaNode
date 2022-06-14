@@ -1,0 +1,24 @@
+# docker-compose.ci.yml
+
+version: "3.9"
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports: 
+      - '5432:5432'
+
+  addressbook:
+    image: $DOCKER_USERNAME/dockerizing-pruebacian:latest
+    command: "npm run migrate && npm run pm2"
+    environment:
+      DB_SCHEMA: blackList
+      DB_USER: postgres
+      DB_PASSWORD: 0bilisam0
+      DB_HOST: postgres
+    depends_on:
+      - postgres
+    ports:
+      - '3000:3000'

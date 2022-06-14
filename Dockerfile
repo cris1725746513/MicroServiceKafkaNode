@@ -1,4 +1,4 @@
-FROM node:16.14-alpine3.14
+FROM registry.semaphoreci.com/node:16
 # Create app directory
 RUN mkdir -p /usr/src/app
 RUN mkdir -p /var/log/app
