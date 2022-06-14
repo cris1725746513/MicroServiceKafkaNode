@@ -1,13 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const rt = require("../back_FM/routes/routes");
+const rt = require("./routes/routes");
 const config = require("config");
-const utils = require("../back_FM/utils/utils");
-const Log = require("../back_FM/models/Log");
+const utils = require("./utils/utils");
+const Log = require("./models/Log");
 const timeout = require("connect-timeout");
-const msg = require("../back_FM/utils/msgKafka");
-const prueba = require("../back_FM/models/respuestaQvantel");
-const sendMail = require("../back_FM/utils/sendSmtp");
+const msg = require("./utils/msgKafka");
+const prueba = require("./models/respuestaQvantel");
+const sendMail = require("./utils/sendSmtp");
 //const consume = require("./consume")
 const app = express();
 const log = utils.getLog();
@@ -66,7 +66,7 @@ const data = {
   user: "rzepeda",
   type:"INSERT",
 };
-
+console.log('Despliegue exitoso')
 
 /*consume().catch((err) => {
 	console.error("error in consumer: ", err)

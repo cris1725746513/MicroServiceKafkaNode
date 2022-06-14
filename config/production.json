@@ -26,8 +26,8 @@
     "name": "PersonalDocumentManagement-api",
     "level": "INFO",
     "levels": {
-      "error": "/var/log/app/errEvent_PersonalDocumentManagement.err",
-      "debug": "/var/log/app/appEvent_PersonalDocumentManagement.out"
+      "error": "./log/error.log",
+      "debug": "./log/debug.log"
     }
   },
   "email":{

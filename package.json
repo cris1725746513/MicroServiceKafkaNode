@@ -5,8 +5,10 @@
   "main": "server.js",
   "private": true,
   "scripts": {
-    "start": "SET NODE_ENV=dev && node server.js",
-    "test": "mocha --reporter spec"
+    "pm2": "pm2 start processes.json --no-daemon",
+    "start": "node server.js",
+    "test": "mocha --reporter spec",
+    "migrate": "node migrate.js"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +31,7 @@
     "jwt-simple": "^0.5.6",
     "kafkajs": "^2.0.2",
     "lowdb": "^3.0.0",
+    "migrat": "^0.2.1",
     "mocha": "^10.0.0",
     "moment": "^2.29.3",
     "moment-timezone": "^0.5.34",
@@ -37,10 +40,12 @@
     "nodemailer": "^6.7.5",
     "nodemon": "^2.0.16",
     "pg": "^8.7.3",
+    "pm2": "^5.2.0",
     "query-string": "^7.1.1",
     "randomstring": "^1.2.2",
     "request": "^2.88.2",
     "schema-object": "^4.0.11",
+    "sequelize": "^6.20.1",
     "swagger-ui-express": "^4.4.0",
     "sworm": "^3.8.1",
     "xml2js": "^0.4.23"
