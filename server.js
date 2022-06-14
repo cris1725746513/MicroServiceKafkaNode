@@ -25,7 +25,9 @@ app.get("/SD", (request, response) => {
   //console.log (regI);
   const  s =prueba.crearRespuestaQ(data);
   response.json(s);
+  
   }else {
+
   } 
 });
 app.route("/blacklist").get(rt.getblacklist).post(rt.createblacklist);

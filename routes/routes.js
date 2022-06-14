@@ -18,8 +18,7 @@ const getblacklistId = (request, response) => {
   const id = parseInt(request.params.id);
   infoLog = new Log({ uri: request.url, clientIP: utils.getClientIP(request) });
   utils.getLog().debug(infoLog, `Iniciando consumo, en método GET`);
-  services
-    .query('SELECT * FROM  public."blackList_Tables" where "id"=@id', { id: id })
+  services.query('SELECT * FROM  public."blackList_Tables" where "id"=@id', { id: id })
     .then(function (results) {
       utils.getLog().debug(infoLog, `Exito al realizar la consulta ${results}`);
       response.status(200).json(results);

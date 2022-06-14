@@ -31,11 +31,6 @@
     }
   },
   "email":{
-    "host_smpt":"smtp.tigo.com.gt",
-    "port_smpt":"25",
-    "user_smpt":"FMS-DBE"
-  },
-  "email2":{
     "host_smpt":"smtp.gmail.com",
     "port_smpt":"465",
     "user_smpt":"catmanyan31@gmail.com",
