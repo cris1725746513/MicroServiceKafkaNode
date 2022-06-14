@@ -23,7 +23,7 @@
     "timeout": 10000
   },
   "log": {
-    "name": "PersonalDocumentManagement-api",
+    "name": "Black_List-api",
     "level": "INFO",
     "levels": {
       "error": "./log/error.log",
@@ -34,7 +34,7 @@
     "host_smpt":"smtp.gmail.com",
     "port_smpt":"465",
     "user_smpt":"catmanyan31@gmail.com",
-    "pass_smpt":"ovhhtlhvyctrymqz"
+    "pass_smpt":"qlqkibjvwyxrghbc"
   }
   
 }

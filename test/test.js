@@ -28,7 +28,7 @@ describe('SERVER BLACK_LIST ...', () => {
       it('it should POST a BLACK_LIST ', (done) => {
         let  BLACK_LIST= {
             nombreBlacklist: "Cristian Prueba Post",
-            id: "3",
+            id: "2",
             status: "true",
             duración: "duracion actualizacion Prueba",
             descripcion: "descripcion de actualizacion Prueba"
@@ -48,12 +48,7 @@ describe('SERVER BLACK_LIST ...', () => {
   describe('/GET/:id BLACK_LIST', () => {
       it('it should GET a BLACK_LIST ', (done) => {
           let BLACK_LIST = new modelo({
-            nombreBlacklist: "Cristian Castillo INSERTAR2 Get ixd",
             id: "1",
-            status: "true",
-            duración: "duracion actualizacion",
-            descripcion: "descripcion de actualizacion"
-          
           });
             chai.request(server)
             .get('/blacklist/' + BLACK_LIST.id)
@@ -72,7 +67,7 @@ describe('SERVER BLACK_LIST ...', () => {
       it('it should UPDATE a BLACK_LIST ', (done) => {
         let BLACK_LIST = new modelo({
             nombreBlacklist: "Sergio Castillo",
-            id: "3",
+            id: "1",
           });
                 chai.request(server)
                 .put('/blacklist/' + BLACK_LIST.id)
@@ -94,7 +89,7 @@ describe('SERVER BLACK_LIST ...', () => {
       it('it should DELETE a BLACK_LIST', (done) => {
         let BLACK_LIST = new modelo({
             nombreBlacklist: "Sergio Castillo",
-            id: "3",
+            id: "2",
           });
           
                 chai.request(server)

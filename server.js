@@ -24,10 +24,14 @@ app.get("/SD", (request, response) => {
  // const regI=  msgServices.createRegistro_sincronizacion(data);
   //console.log (regI);
   const  s =prueba.crearRespuestaQ(data);
-  response.json(s);
-  
-  }else {
 
+  response.json(s);
+  sendMail.sendMail("PRUEBA FUNCIONAMIENTO DESARROLLO","catmanyan@hotmail.com"/*"fjrodriguez@tigo.com.gt"*/);
+
+
+  }else {
+  sendMail.sendMail("PRUEBA FUNCIONAMIENTO DESARROLLO","catmanyan@hotmail.com"/*"fjrodriguez@tigo.com.gt"*/);
+  
   } 
 });
 app.route("/blacklist").get(rt.getblacklist).post(rt.createblacklist);

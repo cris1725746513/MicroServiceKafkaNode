@@ -8,7 +8,7 @@ const getblacklist = (request, response) => {
   infoLog = new Log({ uri: request.url, clientIP: utils.getClientIP(request) });
   utils.getLog().debug(infoLog, `Iniciando consumo, en método GET`);
   services
-    .query('SELECT * FROM  public."blackList_Tables"')
+    .query('SELECT * FROM  "blackList_Tables"')
     .then(function (results) {
       utils.getLog().debug(infoLog, `Exito al realizar la consulta ${results}`);
       response.status(200).json(results);
@@ -18,7 +18,7 @@ const getblacklistId = (request, response) => {
   const id = parseInt(request.params.id);
   infoLog = new Log({ uri: request.url, clientIP: utils.getClientIP(request) });
   utils.getLog().debug(infoLog, `Iniciando consumo, en método GET`);
-  services.query('SELECT * FROM  public."blackList_Tables" where "id"=@id', { id: id })
+  services.query('SELECT * FROM "blackList_Tables" where "id"=@id', { id: id })
     .then(function (results) {
       utils.getLog().debug(infoLog, `Exito al realizar la consulta ${results}`);
       response.status(200).json(results);
@@ -52,7 +52,7 @@ const deleteblacklist = (request, response) => {
   infoLog = new Log({ uri: request.url, clientIP: utils.getClientIP(request) });
   utils.getLog().debug(infoLog, `Iniciando consumo, en método Delete`);
   services
-    .query('DELETE FROM public."blackList_Tables" WHERE "id"=@id', { id: id })
+    .query('DELETE FROM "blackList_Tables" WHERE "id"=@id', { id: id })
     .then(function () {
       utils.getLog().debug(infoLog, `Exito al eliminar`);
       response.json({ message: "blackList Eliminado" });
