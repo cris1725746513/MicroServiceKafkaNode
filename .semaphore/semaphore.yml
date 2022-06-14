@@ -12,8 +12,8 @@ blocks:
           commands:
             - checkout
             - 'echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin'
-            - 'docker pull "${DOCKER_USERNAME}/dockerizing-pruebaCian:latest" || true'
-            - 'docker build --cache-from "${DOCKER_USERNAME}/dockerizing-pruebaCian:latest" -t "${DOCKER_USERNAME}/dockerizing-pruebaCian:latest" .'
-            - 'docker push "${DOCKER_USERNAME}/dockerizing-pruebaCian:latest"'
+            - 'docker pull "${DOCKER_USERNAME}/dockerizing-pruebacian:latest" || true'
+            - 'docker build --cache-from "${DOCKER_USERNAME}/dockerizing-pruebaciann:latest" -t "${DOCKER_USERNAME}/dockerizing-pruebacian:latest" .'
+            - 'docker push "${DOCKER_USERNAME}/dockerizing-pruebacian:latest"'
       secrets:
         - name: PBCI
